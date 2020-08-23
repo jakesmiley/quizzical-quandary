@@ -23,20 +23,23 @@ main {
     background-color: hsl(var(--hue), 100%, 25%);
 }
 
-body.smarty {
+/* color change when correct */
+body.correct {
     --hue: var(--hue-smarty);
 }
 
-body.lesssmarty {
+/* color change when wrong */
+body.wrong {
     --hue: var(--hue-lesssmarty);
 }
 
 #title {
     background-color: deepskyblue;
     padding: 25px 30px;
+    width: 100vw;
     border-bottom: 3px solid var(--primary);
     text-align: center;
-    font-size: larger;
+    font-size: 1.6em;
     font-weight: bolder;
 }
 
@@ -70,12 +73,14 @@ body.lesssmarty {
     border-color: darkslategrey;
 }
 
-.btn.smarty {
+/* color change when right */
+.btn.correct {
     --hue: var(--hue-smarty);
     color: #242424;
 }
 
-.btn.lesssmarty {
+/* color change when not right */
+.btn.wrong {
     --hue: var(--hue-lesssmarty);
 }
 
