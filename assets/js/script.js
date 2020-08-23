@@ -4,13 +4,48 @@ const nextBtn = document.getElementById('next-btn')
 const questionContainerEl = document.getElementById('question-container')
 const queryEl = document.getElementById('query')
 const answerButtonsEl = document.getElementById('answer-btns')
+var highestScore = 0
 
 //allow to be changed instant of constant
-let randomizedQueries, currentQuery
-let smartyPoints = 0;
+let randomizedQueries, currentQuery;
+
+//local storage stuff
+// let highScore = 10
+// username = window.prompt("What is your name or initials?");
+// localStorage.setItem(`${username}`, `${highScore}`)
+
+
+function saveScore() {
+    const score = points //poin
+    const username = window.prompt("Enter your initials");
+    for(var aeiou in localStorage) {
+        if(score > highestScore) {
+            highestScore = score 
+            localStorage.setItem(username, score)
+        }
+    };
+};
+
+// const score = 0;
+// const username = window.prompt("Enter your initials.");
+// localStorage.setItem(username, score);
+
+// for(var aeiou in localStorage) {
+//     console.log(aeiou);
+// };
+
+
+
+
 
 //start the game
 function initializeGame() {
+    //reset score
+    points = 0;
+    // let highScore = JSON.parse(localStorage.getItem('highScore'))
+    // if(!highScore) {
+    //     highScore = [];
+    // };
     //hide initialize button
     initializeBtn.classList.add('invis')
     //shuffle questions
@@ -38,12 +73,21 @@ function chooseAnswer(x) {
     Array.from(answerButtonsEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     });
+    //add points if right
+    if (chosenBtn.dataset = correct) {
+        points++;
+    };
+
     if (randomizedQueries.length > currentQuery + 1) {
         nextBtn.classList.remove('invis')
     } else {
         initializeBtn.innerText = 'Try again?'
         initializeBtn.classList.remove('invis')
+        saveScore();
     }
+    
+    //points setup
+    document.getElementById('points').innerHTML = points;
 };
 
 //clear old info
@@ -91,6 +135,35 @@ function clearStatusClass(element) {
 };
 
 //show score upon submission
+// function finalScore() {
+//     alert("Your score was " + points.value + " points.");
+//     if (points > highScore) {
+//         alert("You set a new high score of " + points.value + " points!");
+//         highScore = points;
+//         saveScore();
+//     } else {
+//         alert("You did not set a new high score :(");
+//     }
+// };
+
+
+//save score
+// function saveScore() {
+//     console.log("Saved score!");
+//     event.preventDefault;
+    
+//     const highScore = {
+//         score: currentScore,
+//         name: window.prompt("What are your initials?")
+//     };
+
+//     localStorage.setItem('s')
+// };
+
+//load high score
+// function loadScore() {
+//     highScore = localStorage.getItem("highScore");
+// };
 
 //initiate
 initializeBtn.addEventListener('click', initializeGame)
