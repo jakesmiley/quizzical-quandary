@@ -103,74 +103,74 @@ nextBtn.addEventListener('click', () => {
 
 //question & answer list
 const queries = [
-  {
-    question: "What is the airspeed velocity of an unladen swallow?",
-    answers: [
-      {text: "I don't know that!", correct: false},
-      {text: "What do you mean? An African or European Swallow?", correct: true}
-    ]
-  },
-  {
-    question: "Who is best doggo?",
-    answers: [
-      {text: "Aislin", correct: true},
-      {text: "Aislin", correct: true},
-      {text: "Aislin", correct: true},
-      {text: "Aislin", correct: true}
-    ]
-  },
-  {
-    question: "What are the holidays about?",
-    answers: [
-      {text: "Loved ones", correct: false},
-      {text: "Gifts", correct: false},
-      {text: "Assorted cheeses and alcohol", correct: true},
-      {text: "Holidays are pointless", correct: false}
-    ]
-  },
-  {
-    question: "Do you consent to giving Jake Smiley $1?",
-    answers: [
-      {text: "NO!", correct: false},
-      {text: "Yes!", correct: true},
-      {text: "Hell naw!", correct: false},
-      {text: "Mayyyybe. Will it help my score?", correct: true}
-    ]
-  },
-  {
-    question: "Pick a letter.",
-    answers: [
-      {text: "That's not a question!", correct: false},
-      {text: "This quiz is more puzzling than quizzical.", correct: false},
-      {text: "Listen. I hate you.", correct: false},
-      {text: "a", correct: true}
-    ]
-  },
-  {
-    question: "2(7-3)^2 / 8 = ? ",
-    answers: [
-      {text: "2", correct: false},
-      {text: "4", correct: true},
-      {text: "6", correct: false},
-      {text: "8", correct: false}
-    ]
-  },
-  {
-    question: "Coding is fun!",
-    answers: [
-      {text: "If by fun you mean crying myself to sleep every night, sure.", correct: false},
-      {text: "It sure is.", correct: true},
-      {text: "Meh.", correct: false},
-      {text: "Not really, it's too easy for me.", correct: false}
-    ]
-  },
-  {
-    question: "Which of the following about Joan of Arc (Jean d'Orléans) is NOT true?",
-    answers: [
-      {text: "She led charges in battle weilding a banner rather than a sword", correct: false},
-      {text: "She relied on donated items for her armor, horse, and other items.", correct: false},
-      {text: "She was canonized as a saint, and is the patron saint of France.", correct: false},
-      {text: "She lost more battles than she won.", correct: true}
-    ]
-  },
+    {
+        question: "What is the airspeed velocity of an unladen swallow?",
+        answers: [
+        {text: "I don't know that!", correct: false},
+        {text: "What do you mean? An African or European Swallow?", correct: true}
+        ]
+    },
+    {
+        question: "Who is best doggo?",
+        answers: [
+        {text: "Aislin", correct: true},
+        {text: "Aislin", correct: true},
+        {text: "Aislin", correct: true},
+        {text: "Aislin", correct: true}
+        ]
+    },
+    {
+        question: "What are the holidays about?",
+        answers: [
+        {text: "Loved ones", correct: false},
+        {text: "Gifts", correct: false},
+        {text: "Assorted cheeses and alcohol", correct: true},
+        {text: "Holidays are pointless", correct: false}
+        ]
+    },
+    {
+        question: "Do you consent to giving Jake Smiley $1?",
+        answers: [
+        {text: "NO!", correct: false},
+        {text: "Yes!", correct: true},
+        {text: "Hell naw!", correct: false},
+        {text: "Mayyyybe. Will it help my score?", correct: true}
+        ]
+    },
+    {
+        question: "Pick a letter.",
+        answers: [
+        {text: "That's not a question!", correct: false},
+        {text: "This quiz is more puzzling than quizzical.", correct: false},
+        {text: "Listen. I hate you.", correct: false},
+        {text: "a", correct: true}
+        ]
+    },
+    {
+        question: "2(7-3)^2 / 8 = ? ",
+        answers: [
+        {text: "2", correct: false},
+        {text: "4", correct: true},
+        {text: "6", correct: false},
+        {text: "8", correct: false}
+        ]
+    },
+    {
+        question: "Coding is fun!",
+        answers: [
+        {text: "If by fun you mean crying myself to sleep every night, sure.", correct: false},
+        {text: "It sure is.", correct: true},
+        {text: "Meh.", correct: false},
+        {text: "Not really, it's too easy for me.", correct: false}
+        ]
+    },
+    {
+        question: "Which of the following about Joan of Arc (Jean d'Orléans) is NOT true?",
+        answers: [
+        {text: "She led charges in battle weilding a banner rather than a sword", correct: false},
+        {text: "She relied on donated items for her armor, horse, and other items.", correct: false},
+        {text: "She was canonized as a saint, and is the patron saint of France.", correct: false},
+        {text: "She lost more battles than she won.", correct: true}
+        ]
+    },
 ]
