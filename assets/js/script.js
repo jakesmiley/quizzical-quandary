@@ -26,7 +26,7 @@ function countdown() {
     // Using `setInterval()` method to call a function to be executed every 1s
     var timeInterval = setInterval(function() {
         if (timeLeft > 0) {
-        timerEl.textContent = timeLeft + ' time remaining';
+        timerEl.textContent = timeLeft + ' Seconds Remaining';
         timeLeft--;
         } else {
             timeLeft--;
@@ -45,7 +45,7 @@ function countdown() {
 
 //local storage stuffs
 function saveScore() {
-    const score = points //poin
+    const score = points //points
     const username = window.prompt("Enter your initials");
     for(var aeiou in localStorage) {
         if(score > highestScore) {
@@ -103,7 +103,7 @@ function chooseAnswer(x) {
     }
     
     //points setup
-    document.getElementById('points').innerHTML = points;
+    document.getElementById('smart-points').innerHTML = points;
 };
 
 //clear old info
