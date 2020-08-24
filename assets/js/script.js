@@ -9,12 +9,38 @@ var highestScore = 0
 //allow to be changed instant of constant
 let randomizedQueries, currentQuery;
 
-//local storage stuff
-// let highScore = 10
-// username = window.prompt("What is your name or initials?");
-// localStorage.setItem(`${username}`, `${highScore}`)
+//timer
+var timerEl = document.getElementById('countdown');
+var mainEl = document.getElementById('main');
+var startBtn = document.getElementById('start');
 
+var message =
+  'Congratulations! Now you are prepared to tackle the Challenge this week! Good luck!';
+var words = message.split(' ');
 
+// timer = meaning of life, the universe, and everything
+function countdown() {
+    var timeLeft = 42;
+
+    // Using `setInterval()` method to call a function to be executed every 1s
+    var timeInterval = setInterval(function() {
+        if (timeLeft > 0) {
+        timerEl.textContent = timeLeft + ' time remaining';
+        timeLeft--;
+        } else {
+            timerEl.textContent = '';
+            clearInterval(timeInterval);
+            nextBtn.classList.add('invis');
+            initializeBtn.innerText = 'Try again?'
+            initializeBtn.classList.remove('invis')
+            alert("Time's up!");
+            saveScore();
+            return;
+        }
+    }, 1000);
+};
+
+//local storage stuffs
 function saveScore() {
     const score = points //poin
     const username = window.prompt("Enter your initials");
@@ -26,26 +52,10 @@ function saveScore() {
     };
 };
 
-// const score = 0;
-// const username = window.prompt("Enter your initials.");
-// localStorage.setItem(username, score);
-
-// for(var aeiou in localStorage) {
-//     console.log(aeiou);
-// };
-
-
-
-
-
 //start the game
 function initializeGame() {
     //reset score
     points = 0;
-    // let highScore = JSON.parse(localStorage.getItem('highScore'))
-    // if(!highScore) {
-    //     highScore = [];
-    // };
     //hide initialize button
     initializeBtn.classList.add('invis')
     //shuffle questions
@@ -54,6 +64,9 @@ function initializeGame() {
     currentQuery = 0;
     //unhide questions
     questionContainerEl.classList.remove('invis');
+    //start timer
+    countdown();
+    //start questions
     generateQuestion();
 };
 
@@ -133,37 +146,6 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 };
-
-//show score upon submission
-// function finalScore() {
-//     alert("Your score was " + points.value + " points.");
-//     if (points > highScore) {
-//         alert("You set a new high score of " + points.value + " points!");
-//         highScore = points;
-//         saveScore();
-//     } else {
-//         alert("You did not set a new high score :(");
-//     }
-// };
-
-
-//save score
-// function saveScore() {
-//     console.log("Saved score!");
-//     event.preventDefault;
-    
-//     const highScore = {
-//         score: currentScore,
-//         name: window.prompt("What are your initials?")
-//     };
-
-//     localStorage.setItem('s')
-// };
-
-//load high score
-// function loadScore() {
-//     highScore = localStorage.getItem("highScore");
-// };
 
 //initiate
 initializeBtn.addEventListener('click', initializeGame)
