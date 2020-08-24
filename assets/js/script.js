@@ -22,7 +22,7 @@ var timeLeft = 0;
 // timer = meaning of life, the universe, and everything
 function countdown() {
     timerEl.classList.remove('invis');
-    timeLeft = 10;
+    timeLeft = 77;
 
     // Using `setInterval()` method to call a function to be executed every 1s
     var timeInterval = setInterval(function() {
