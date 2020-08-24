@@ -17,11 +17,12 @@ var startBtn = document.getElementById('start');
 var message =
   'Congratulations! Now you are prepared to tackle the Challenge this week! Good luck!';
 var words = message.split(' ');
+var timeLeft = 0;
 
 // timer = meaning of life, the universe, and everything
 function countdown() {
     timerEl.classList.remove('invis');
-    var timeLeft = 42;
+    timeLeft = 10;
 
     // Using `setInterval()` method to call a function to be executed every 1s
     var timeInterval = setInterval(function() {
@@ -29,8 +30,7 @@ function countdown() {
         timerEl.textContent = timeLeft + ' Seconds Remaining';
         timeLeft--;
         } else {
-            timeLeft--;
-            timerEl.textContent = '';
+            timeLeft=0;
             clearInterval(timeInterval);
             timerEl.classList.add('invis');
             nextBtn.classList.add('invis');
@@ -45,6 +45,8 @@ function countdown() {
 
 //local storage stuffs
 function saveScore() {
+        initializeBtn.innerText = 'Try again?'
+        initializeBtn.classList.remove('invis');
     const score = points //points
     const username = window.prompt("Enter your initials");
     for(var aeiou in localStorage) {
@@ -53,6 +55,8 @@ function saveScore() {
             localStorage.setItem(username, score)
         }
     };
+    score = 0;
+    timeLeft = 0;
 };
 
 //start the game
@@ -92,13 +96,13 @@ function chooseAnswer(x) {
     //add points if right
     if (chosenBtn.dataset = correct) {
         points++;
-    };
+    } else {
+        timeLeft = timeLeft - 3;
+    }
 
     if (randomizedQueries.length > currentQuery + 1) {
         nextBtn.classList.remove('invis')
     } else {
-        initializeBtn.innerText = 'Try again?'
-        initializeBtn.classList.remove('invis')
         saveScore();
     }
     
@@ -127,7 +131,8 @@ function displayQuery(question) {
       button.classList.add('btn')
       if (answer.correct) {
         button.dataset.correct = answer.correct
-      };
+      }
+
       button.addEventListener('click', chooseAnswer);
       answerButtonsEl.appendChild(button);
     });
