@@ -20,6 +20,7 @@ var words = message.split(' ');
 
 // timer = meaning of life, the universe, and everything
 function countdown() {
+    timerEl.classList.remove('invis');
     var timeLeft = 42;
 
     // Using `setInterval()` method to call a function to be executed every 1s
@@ -28,8 +29,10 @@ function countdown() {
         timerEl.textContent = timeLeft + ' time remaining';
         timeLeft--;
         } else {
+            timeLeft--;
             timerEl.textContent = '';
             clearInterval(timeInterval);
+            timerEl.classList.add('invis');
             nextBtn.classList.add('invis');
             initializeBtn.innerText = 'Try again?'
             initializeBtn.classList.remove('invis')
